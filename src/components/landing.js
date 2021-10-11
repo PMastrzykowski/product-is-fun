@@ -6,6 +6,7 @@ import animateScrollTo from "animated-scroll-to";
 //Assets
 import HeaderLogo from "../assets/header-logo.svg";
 
+
 class Landing extends React.Component {
     constructor(props) {
         super(props);
