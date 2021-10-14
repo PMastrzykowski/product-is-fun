@@ -175,23 +175,23 @@ class Landing extends React.Component {
             slidesToShow: 1,
             slidesToScroll: 1,
             autoplay: true,
-            arrows: true
+            arrows: false,
         };
         const recommendations = [
             {
                 content: `Patryk is great product manager with life-saving technical background. He has excellent ideas, great communication and heart-warming 'can do' attitude. He's a coworker each team should have.`,
-                author: 'Jacek',
-                link: 'https://www.linkedin.com/in/jacekfilo/'
+                author: "Jacek",
+                link: "https://www.linkedin.com/in/jacekfilo/",
             },
             {
                 content: `Cooperation with Patryk is an amazing experience. You can always count on a multitude of his creative ideas as well as his helping hand. Applying teaching skill (and patience) he explains all the nuances of potential solutions. Patryk's workshop is characterized by punctuality, diligence, quick implementation of changes, openness to customer's suggestions, creativity and accessibility. His analytical mind combined with the artistic sense, highly developed emotional intelligence and a sense of humor make work not only successful, but also pleasant!`,
-                author: 'Karol',
-                link: 'https://www.linkedin.com/in/karol-mierzwa-519505150/'
+                author: "Karol",
+                link: "https://www.linkedin.com/in/karol-mierzwa-519505150/",
             },
             {
                 content: `I was working with Patryk for 1,5 year. It was a great pleasure to cooperate with him. During that time he was considered as the most innovative person in our team. Patryk's input allowed to speed up our daily work due to automatization of the process and reducing manual job. Patryk combined great financial knowledge with strong sense of technical issues. He was also known as a good team player being ready to provide others with advices and adding positive atmosphere in the group. I can fully recommend working with Patryk!`,
-                author: 'Bartłomiej',
-                link: 'https://www.linkedin.com/in/bart%C5%82omiej-o%C5%BCga-600674154/'
+                author: "Bartłomiej",
+                link: "https://www.linkedin.com/in/bart%C5%82omiej-o%C5%BCga-600674154/",
             },
         ];
         return (
@@ -248,230 +248,243 @@ class Landing extends React.Component {
                         </div>
                     </div>
                 </header>
-                <section id="main">
-                    <div className="main-left"></div>
-                    <div className="main-right">
-                        <div className="main-content">
-                            Do you dream about horrible product, tiring UX or
-                            frustrated team members? Great! Don’t stay in touch!
-                            🤗
+                <div id="mobile-menu"></div>
+                <div id="landing-content">
+                    <section id="main">
+                        <div className="main-left"></div>
+                        <div className="main-right">
+                            <div className="main-content">
+                                Do you dream about horrible product, tiring UX
+                                or frustrated team members? Great! Don’t stay in
+                                touch! 🤗
+                            </div>
+                            <div className="main-or">In other case</div>
+                            <button className={`contact-me`}>Contact me</button>
                         </div>
-                        <div className="main-or">In other case</div>
-                        <button className={`contact-me`}>Contact me</button>
-                    </div>
-                </section>
-                <section id="about">
-                    <div className="about-left">
-                        <div className="about-title">
-                            <h1>About me</h1>
+                    </section>
+                    <section id="about">
+                        <div className="about-left">
+                            <div className="about-title">
+                                <h1>About me</h1>
+                            </div>
+                            <div className="about-content">
+                                <p>
+                                    Let’s do some awesome things together! Feel
+                                    free to talk to me if you need someone
+                                    conducting software development or bonding
+                                    business and technology. Here’s why:
+                                </p>
+                                <p>
+                                    As a visionary thinker I can clearly imagine
+                                    not only how things will look in the future,
+                                    but also how to gradually change the current
+                                    state to achieve the goal. My imagination
+                                    combined with business, technical and design
+                                    skills allow me build things so quickly and
+                                    so easily. Please check the projects I have
+                                    conducted so far. I will be more than happy
+                                    to tell you more about the ways I work.
+                                </p>
+                                <p>
+                                    Being comfortable taking charge and speaking
+                                    up helps me remove bottlenecks and reassure
+                                    others in times of crisis. I am fully
+                                    determined to make a difference. This skill
+                                    is extremely important while working with a
+                                    team - I break the ice between the people
+                                    naturally and make them feel good with
+                                    unfamiliar ones. While living in three
+                                    countries I mastered building social
+                                    connections from scratch.
+                                </p>
+                                <p>
+                                    I have a heavy load of experience in the
+                                    direct contact with all the variety of
+                                    clients, including the most difficult ones.
+                                    I know how to deal with people, make them
+                                    happy and not let them dominate me. In some
+                                    projects I worked in international
+                                    cross-institutional teams with, among
+                                    others, Polish Ministry of Finance or the
+                                    International Swaps and Derivatives
+                                    Association.
+                                </p>
+                                <p>
+                                    Please get in touch with me if you have any
+                                    questions!
+                                </p>
+                                <p>It will be great hearing from you,</p>
+                                <p>Patryk</p>
+                            </div>
                         </div>
-                        <div className="about-content">
-                            <p>
-                                Let’s do some awesome things together! Feel free
-                                to talk to me if you need someone conducting
-                                software development or bonding business and
-                                technology. Here’s why:
-                            </p>
-                            <p>
-                                As a visionary thinker I can clearly imagine not
-                                only how things will look in the future, but
-                                also how to gradually change the current state
-                                to achieve the goal. My imagination combined
-                                with business, technical and design skills allow
-                                me build things so quickly and so easily. Please
-                                check the projects I have conducted so far. I
-                                will be more than happy to tell you more about
-                                the ways I work.
-                            </p>
-                            <p>
-                                Being comfortable taking charge and speaking up
-                                helps me remove bottlenecks and reassure others
-                                in times of crisis. I am fully determined to
-                                make a difference. This skill is extremely
-                                important while working with a team - I break
-                                the ice between the people naturally and make
-                                them feel good with unfamiliar ones. While
-                                living in three countries I mastered building
-                                social connections from scratch.
-                            </p>
-                            <p>
-                                I have a heavy load of experience in the direct
-                                contact with all the variety of clients,
-                                including the most difficult ones. I know how to
-                                deal with people, make them happy and not let
-                                them dominate me. In some projects I worked in
-                                international cross-institutional teams with,
-                                among others, Polish Ministry of Finance or the
-                                International Swaps and Derivatives Association.
-                            </p>
-                            <p>
-                                Please get in touch with me if you have any
-                                questions!
-                            </p>
-                            <p>It will be great hearing from you,</p>
-                            <p>Patryk</p>
-                        </div>
-                    </div>
-                    <div className="about-right"></div>
-                </section>
-                <section id="how-i-work">
-                    <div className="how-i-work-left">
-                        <div className="how-i-work-title">How</div>
-                        <div className="how-i-work-title">I work</div>
+                        <div className="about-right"></div>
+                    </section>
+                    <section id="how-i-work">
+                        <div className="how-i-work-left">
+                            <div className="how-i-work-title">How</div>
+                            <div className="how-i-work-title">I work</div>
 
-                        <div className="how-i-work-or">Fair enough?</div>
+                            <div className="how-i-work-or">Fair enough?</div>
+                            <button className={`contact-me`}>Contact me</button>
+                        </div>
+                        <div className="how-i-work-right">
+                            <div className="how-i-work-content-title">
+                                <div className="how-i-work-content-title-number">
+                                    1
+                                </div>
+                                <div className="how-i-work-content-title-label">
+                                    No jurisdictional disputes
+                                </div>
+                            </div>
+                            <div className="how-i-work-content">
+                                <p>
+                                    Everyone has their work to do, I’m here to
+                                    say what needs to be done next. I don’t
+                                    lower technical estimates just to fit
+                                    deadlines, you won’t see me micromanaging
+                                    anyone.
+                                </p>
+                            </div>
+                            <div className="how-i-work-content-title">
+                                <div className="how-i-work-content-title-number">
+                                    2
+                                </div>
+                                <div className="how-i-work-content-title-label">
+                                    Empathy is a key
+                                </div>
+                            </div>
+                            <div className="how-i-work-content">
+                                <p>
+                                    Both customers and development teams members
+                                    are people. There is much more than product
+                                    focus in their lives and other’s wellbeing
+                                    is always the priority for me.
+                                </p>
+                            </div>
+                            <div className="how-i-work-content-title">
+                                <div className="how-i-work-content-title-number">
+                                    3
+                                </div>
+                                <div className="how-i-work-content-title-label">
+                                    Customers value first
+                                </div>
+                            </div>
+                            <div className="how-i-work-content">
+                                <p>
+                                    My role is to understand customers.
+                                    Knowledge of their struggles is a source of
+                                    potential solutions we can provide. I ask
+                                    questions and analyse impacts of our
+                                    actions.
+                                </p>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="product-faq">
+                        <div className="product-faq-title product-faq-title-1">
+                            Product
+                        </div>
+                        <div className="product-faq-title product-faq-title-2">
+                            FAQ
+                        </div>
+                        <div className="product-faq-content">
+                            Product is just a way to solve a problem and it has
+                            to follow company vision. Imagine how the world
+                            might look like in 5 or 10 years. I will help you
+                            make the best of your vision, adjust your products
+                            to market needs and earn more.
+                        </div>
+                        <div className="product-faq-buttons">
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                            <div className="product-faq-button">
+                                <div className="product-faq-button-title">
+                                    How to roadmap?
+                                </div>
+                                <div className="product-faq-button-icon">
+                                    <img
+                                        src={OpenBlank}
+                                        alt={`Open in a newą tab`}
+                                    />
+                                </div>
+                            </div>
+                        </div>
+                    </section>
+                    <section id="experience">
+                        <div className="experience-title">No miracles.</div>
+                        <div className="experience-content">
+                            I worked with companies of all sizes. I will handle
+                            all sort of problems you have. There are no
+                            miracles. All the rest can be addressed.
+                        </div>
                         <button className={`contact-me`}>Contact me</button>
-                    </div>
-                    <div className="how-i-work-right">
-                        <div className="how-i-work-content-title">
-                            <div className="how-i-work-content-title-number">
-                                1
-                            </div>
-                            <div className="how-i-work-content-title-label">
-                                No jurisdictional disputes
-                            </div>
+                        <div className="experience-brands">
+                            <img src={LogoBNY} alt={`BNY Mellon`} className="experience-brand"/>
+                            <img
+                                src={LogoEagle}
+                                alt={`Eagle Investment Systems`} className="experience-brand"
+                            />
+                            <img src={LogoProto} alt={`Proto.io`} className="experience-brand" />
+                            <img src={LogoHSBC} alt={`HSBC`} className="experience-brand" />
                         </div>
-                        <div className="how-i-work-content">
-                            <p>
-                                Everyone has their work to do, I’m here to say
-                                what needs to be done next. I don’t lower
-                                technical estimates just to fit deadlines, you
-                                won’t see me micromanaging anyone.
-                            </p>
-                        </div>
-                        <div className="how-i-work-content-title">
-                            <div className="how-i-work-content-title-number">
-                                2
-                            </div>
-                            <div className="how-i-work-content-title-label">
-                                Empathy is a key
-                            </div>
-                        </div>
-                        <div className="how-i-work-content">
-                            <p>
-                                Both customers and development teams members are
-                                people. There is much more than product focus in
-                                their lives and other’s wellbeing is always the
-                                priority for me.
-                            </p>
-                        </div>
-                        <div className="how-i-work-content-title">
-                            <div className="how-i-work-content-title-number">
-                                3
-                            </div>
-                            <div className="how-i-work-content-title-label">
-                                Customers value first
-                            </div>
-                        </div>
-                        <div className="how-i-work-content">
-                            <p>
-                                My role is to understand customers. Knowledge of
-                                their struggles is a source of potential
-                                solutions we can provide. I ask questions and
-                                analyse impacts of our actions.
-                            </p>
-                        </div>
-                    </div>
-                </section>
-                <section id="product-faq">
-                    <div className="product-faq-title product-faq-title-1">
-                        Product
-                    </div>
-                    <div className="product-faq-title product-faq-title-2">
-                        FAQ
-                    </div>
-                    <div className="product-faq-content">
-                        Product is just a way to solve a problem and it has to
-                        follow company vision. Imagine how the world might look
-                        like in 5 or 10 years. I will help you make the best of
-                        your vision, adjust your products to market needs and
-                        earn more.
-                    </div>
-                    <div className="product-faq-buttons">
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                        <div className="product-faq-button">
-                            <div className="product-faq-button-title">
-                                How to roadmap?
-                            </div>
-                            <div className="product-faq-button-icon">
-                                <img
-                                    src={OpenBlank}
-                                    alt={`Open in a newą tab`}
-                                />
-                            </div>
-                        </div>
-                    </div>
-                </section>
-                <section id="experience">
-                    <div className="experience-title">No miracles.</div>
-                    <div className="experience-content">
-                        I worked with companies of all sizes. I will handle all
-                        sort of problems you have. There are no miracles. All
-                        the rest can be addressed.
-                    </div>
-                    <button className={`contact-me`}>Contact me</button>
-                    <div className="experience-brands">
-                        <img src={LogoBNY} alt={`BNY Mellon`} />
-                        <img src={LogoEagle} alt={`Eagle Investment Systems`} />
-                        <img src={LogoProto} alt={`Proto.io`} />
-                        <img src={LogoHSBC} alt={`HSBC`} />
-                    </div>
-                    <Slider {...sliderSettings} className="experience-slider">
-                        {recommendations.map((box, i) => (
+                        <Slider
+                            {...sliderSettings}
+                            className="experience-slider"
+                        >
+                            {recommendations.map((box, i) => (
                                 <div key={`box-${i}`} className={`slider-box`}>
                                     <div
                                         key={`box-${i}`}
@@ -486,29 +499,40 @@ class Landing extends React.Component {
                                     </div>
                                 </div>
                             ))}
-                    </Slider>
-                </section>
-                <img src={ContactRibbon} alt={`Contact`} />
-                <section id="contact">
-                    <div className="contact-title contact-title-1">
-                        Don
-                        <span>&#39;</span>t
-                    </div>
-                    <div className="contact-title contact-title-2">make me</div>
-                    <div className="contact-title contact-title-3">wait</div>
-                    <div className="contact-or">Message me on</div>
-                    <div className="contact-linkedin">
-                        <img src={LogoLinkedin} alt={`Linkedin`} />
-                        <div className="contact-arrow contact-arrow-left" />
-                        <div className="contact-arrow contact-arrow-right" />
-                    </div>
-                    <div className="contact-or">Or</div>
-                    <div className="contact-mail">patryk@productisfun.com</div>
-                </section>
-                <footer>
-                    <div className="footer-author">Made with ❤️ by Patryk Mastrzykowski</div>
-                    <div className="footer-author">Photos by Mariusz Spłuszka</div>
-                </footer>
+                        </Slider>
+                    </section>
+                    <img src={ContactRibbon} alt={`Contact`} />
+                    <section id="contact">
+                        <div className="contact-title contact-title-1">
+                            Don
+                            <span>&#39;</span>t
+                        </div>
+                        <div className="contact-title contact-title-2">
+                            make me
+                        </div>
+                        <div className="contact-title contact-title-3">
+                            wait
+                        </div>
+                        <div className="contact-or">Message me on</div>
+                        <div className="contact-linkedin">
+                            <img src={LogoLinkedin} alt={`Linkedin`} />
+                            <div className="contact-arrow contact-arrow-left" />
+                            <div className="contact-arrow contact-arrow-right" />
+                        </div>
+                        <div className="contact-or">Or</div>
+                        <div className="contact-mail">
+                            patryk@productisfun.com
+                        </div>
+                    </section>
+                    <footer>
+                        <div className="footer-author">
+                            Made with ❤️ by Patryk Mastrzykowski
+                        </div>
+                        <div className="footer-author">
+                            Photos by Mariusz Spłuszka
+                        </div>
+                    </footer>
+                </div>
             </div>
         );
         // return (

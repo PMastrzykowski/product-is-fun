@@ -1,0 +1,23 @@
+@media only screen and (max-width: 700px) {
+    #landing {
+        #landing-content {
+            #experience {
+                .experience-title {
+                    line-height: $experience-title-font-size-700;
+                    font-size: $experience-title-font-size-700;
+                }
+            }
+            #contact {
+                .contact-linkedin {
+                    .contact-arrow {
+                        display: none;
+                    }
+                }
+                .contact-mail {
+                    line-height: $contact-mail-font-size-700;
+                    font-size: $contact-mail-font-size-700;
+                }
+            }
+        }
+    }
+}

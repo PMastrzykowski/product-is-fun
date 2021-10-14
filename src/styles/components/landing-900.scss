@@ -1,0 +1,54 @@
+@media only screen and (max-width: 900px) {
+    #landing {
+        #header {
+            display: none;
+        }
+        #landing-content {
+            #main {
+                @include flex-direction(column);
+                .main-left,
+                .main-right {
+                    width: 100vw;
+                    min-height: 50vh;
+                }
+            }
+            #about {
+                @include flex-direction(column);
+                .about-left,
+                .about-right {
+                    width: 100vw;
+                }
+                .about-left {
+                    order: 1;
+                }
+                .about-right {
+                    order: 0;
+                    height: 80vh;
+                }
+            }
+            #how-i-work {
+                @include flex-direction(column);
+                .how-i-work-left,
+                .how-i-work-right {
+                    width: 100vw;
+                    height: 100%;
+                }
+
+                .how-i-work-left {
+                    margin-bottom: 100px;
+                    .how-i-work-or,
+                    .contact-me {
+                        display: none;
+                    }
+                }
+            }
+            #product-faq {
+                .product-faq-buttons {
+                    .product-faq-button {
+                        width: 100%;
+                    }
+                }
+            }
+        }
+    }
+}

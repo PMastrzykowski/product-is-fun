@@ -1,7 +1,8 @@
 #landing {
-    width: 100%;
-    height: 100%;
+    width: 100vw;
+    height: 100vh;
     position: relative;
+    overflow-x: hidden;
     #loader {
         display: none !important;
         position: fixed;
@@ -38,7 +39,6 @@
             @include justify-content(space-between);
             @include align-items(flex-start);
             width: 100%;
-            max-width: 2000px;
             margin: 0 auto;
             .header-inner-left {
                 padding: 25px 0;
@@ -46,335 +46,375 @@
             }
         }
     }
-    #main {
-        height: calc(100vh + 100px);
-        clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
-        @include flexbox();
-        .main-left,
-        .main-right {
-            width: 50vw;
-            height: 100%;
-        }
-        .main-left {
-            background-image: url("../../assets/patryk-eyes-up.jpg");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-        .main-right {
-            @include flexbox();
-            @include flex-direction(column);
-            @include justify-content(center);
-            @include align-items(center);
-            background-color: $color-white;
-            padding: 150px;
-            box-sizing: border-box;
-            .main-content {
-                text-align: center;
-                font-size: $main-content-font-size;
-            }
-            .main-or {
-                font-size: $main-or-font-size;
-                text-transform: uppercase;
-                font-weight: 800;
-                padding: 50px 0;
-                box-sizing: border-box;
-            }
-        }
+    #mobile-menu {
+        position: fixed;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: $color-white;
     }
-    #about {
-        height: calc(100vh + 100px);
-        clip-path: polygon(0 100px, 100% 0, 100% calc(100% - 100px), 0 100%);
-        @include flexbox();
-        transform: translateY(-100px);
-        color: $color-white;
-        .about-left,
-        .about-right {
-            width: 50vw;
-            height: 100%;
-        }
-        .about-left {
+    #landing-content {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        background-color: $color-white;
+        transition: all 1s;
+        box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+        // transform: scale(0.9) translateX(80vw);
+        #main {
+            height: calc(100vh + 100px);
+            clip-path: polygon(0 0, 100% 0, 100% calc(100% - 100px), 0 100%);
             @include flexbox();
-            @include flex-direction(column);
-            @include justify-content(center);
-            @include align-items(flex-end);
+            .main-left,
+            .main-right {
+                width: 50vw;
+                height: 100%;
+            }
+            .main-left {
+                background-image: url("../../assets/patryk-eyes-up.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+            .main-right {
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content(center);
+                @include align-items(center);
+                background-color: $color-white;
+                padding: 150px;
+                box-sizing: border-box;
+                .main-content {
+                    text-align: center;
+                    font-size: $main-content-font-size;
+                }
+                .main-or {
+                    font-size: $main-or-font-size;
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    padding: 50px 0;
+                    box-sizing: border-box;
+                }
+            }
+        }
+        #about {
+            // height: calc(100vh + 100px);
+            clip-path: polygon(
+                0 100px,
+                100% 0,
+                100% calc(100% - 100px),
+                0 100%
+            );
+            @include flexbox();
+            @include align-items(stretch);
+            transform: translateY(-100px);
+            color: $color-white;
+            .about-left,
+            .about-right {
+                width: 50vw;
+            }
+            .about-left {
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content(center);
+                @include align-items(flex-end);
+                background-color: $color-black;
+                padding: 150px;
+                box-sizing: border-box;
+                .about-title {
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: $about-title-font-size;
+                }
+                .about-content {
+                    font-weight: 300;
+                    font-size: $about-content-font-size;
+                }
+            }
+            .about-right {
+                background-image: url("../../assets/patryk-standing.jpg");
+                background-position: center center;
+                background-repeat: no-repeat;
+                background-size: cover;
+            }
+        }
+        #how-i-work {
+            margin-bottom: 100px;
+            @include flexbox();
+            .how-i-work-left,
+            .how-i-work-right {
+                width: 50vw;
+                height: 100%;
+                box-sizing: border-box;
+                padding: 0 150px;
+            }
+            .how-i-work-left {
+                @include flexbox();
+                @include flex-direction(column);
+                @include justify-content(flex-start);
+                @include align-items(flex-end);
+                padding-right: 50px;
+                .how-i-work-title {
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: $how-i-work-title-font-size;
+                    text-align: end;
+                    line-height: 120px;
+                }
+                .how-i-work-or {
+                    text-transform: uppercase;
+                    font-weight: 800;
+                    font-size: $how-i-work-or-font-size;
+                    text-align: end;
+                    margin: 60px 0 30px;
+                }
+            }
+            .how-i-work-right {
+                padding-left: 50px;
+                .how-i-work-content-title {
+                    @include flexbox();
+                    @include align-items(center);
+                    font-weight: 800;
+                    .how-i-work-content-title-number {
+                        margin: 10px;
+                        width: 30px;
+                        height: 30px;
+                        max-width: 30px;
+                        max-height: 30px;
+                        border: 5px solid $color-black;
+                        border-radius: 50%;
+                        @include flexbox();
+                        @include flex-direction(column);
+                        @include justify-content(center);
+                        font-size: $how-i-work-content-title-font-size;
+                        @include align-items(center);
+                    }
+                    .how-i-work-content-title-label {
+                        font-weight: 800;
+                        text-transform: uppercase;
+                        font-size: $how-i-work-content-title-font-size;
+                    }
+                }
+                .how-i-work-content {
+                    padding-left: 60px;
+                }
+            }
+        }
+        #product-faq {
+            height: fit-content;
+            clip-path: polygon(
+                0 100px,
+                100% 0,
+                100% calc(100% - 100px),
+                0 100%
+            );
+            color: $color-white;
             background-color: $color-black;
             padding: 150px;
-            box-sizing: border-box;
-            .about-title {
+            .product-faq-title {
                 text-transform: uppercase;
+                text-align: center;
                 font-weight: 800;
-                font-size: $about-title-font-size;
+                &.product-faq-title-1 {
+                    line-height: $product-faq-title-1-font-size;
+                    font-size: $product-faq-title-1-font-size;
+                }
+                &.product-faq-title-2 {
+                    line-height: $product-faq-title-2-font-size;
+                    font-size: $product-faq-title-2-font-size;
+                }
             }
-            .about-content {
+            .product-faq-content {
+                text-align: center;
+                margin: 100px auto;
                 font-weight: 300;
-                font-size: $about-content-font-size;
+                width: 100%;
+                max-width: 1000px;
+                font-size: $product-faq-content-font-size;
             }
-        }
-        .about-right {
-            background-image: url("../../assets/patryk-standing.jpg");
-            background-position: center center;
-            background-repeat: no-repeat;
-            background-size: cover;
-        }
-    }
-    #how-i-work {
-        margin-bottom: 100px;
-        @include flexbox();
-        .how-i-work-left,
-        .how-i-work-right {
-            width: 50vw;
-            height: 100%;
-            box-sizing: border-box;
-            padding: 0 150px;
-        }
-        .how-i-work-left {
-            @include flexbox();
-            @include flex-direction(column);
-            @include justify-content(flex-start);
-            @include align-items(flex-end);
-            padding-right: 50px;
-            .how-i-work-title {
-                text-transform: uppercase;
-                font-weight: 800;
-                font-size: $how-i-work-title-font-size;
-                text-align: end;
-                line-height: 120px;
-            }
-            .how-i-work-or {
-                text-transform: uppercase;
-                font-weight: 800;
-                font-size: $how-i-work-or-font-size;
-                text-align: end;
-                margin: 60px 0 30px;
-            }
-        }
-        .how-i-work-right {
-            padding-left: 50px;
-            .how-i-work-content-title {
-                @include flexbox();
-                @include align-items(center);
-                font-weight: 800;
-                .how-i-work-content-title-number {
-                    margin: 10px;
-                    width: 30px;
-                    height: 30px;
-                    max-width: 30px;
-                    max-height: 30px;
-                    border: 5px solid $color-black;
-                    border-radius: 50%;
-                    @include flexbox();
-                    @include flex-direction(column);
-                    @include justify-content(center);
-                    font-size: $how-i-work-content-title-font-size;
-                    @include align-items(center);
-                }
-                .how-i-work-content-title-label {
-                    font-weight: 800;
-                    text-transform: uppercase;
-                    font-size: $how-i-work-content-title-font-size;
-                }
-            }
-            .how-i-work-content {
-                padding-left: 60px;
-            }
-        }
-    }
-    #product-faq {
-        height: fit-content;
-        clip-path: polygon(0 100px, 100% 0, 100% calc(100% - 100px), 0 100%);
-        color: $color-white;
-        background-color: $color-black;
-        padding: 150px;
-        .product-faq-title {
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 800;
-            &.product-faq-title-1 {
-                line-height: $product-faq-title-1-font-size;
-                font-size: $product-faq-title-1-font-size;
-            }
-            &.product-faq-title-2 {
-                line-height: $product-faq-title-2-font-size;
-                font-size: $product-faq-title-2-font-size;
-            }
-        }
-        .product-faq-content {
-            text-align: center;
-            margin: 100px auto;
-            font-weight: 300;
-            width: 100%;
-            max-width: 1000px;
-            font-size: $product-faq-content-font-size;
-        }
-        .product-faq-buttons {
-            margin: 100px auto;
-            box-sizing: border-box;
-            @include flexbox();
-            @include justify-content(space-between);
-            @include flex-wrap(wrap);
-            .product-faq-button {
-                border: 1px solid $color-white;
-                padding: 20px;
+            .product-faq-buttons {
+                margin: 100px auto;
                 box-sizing: border-box;
-                margin: 10px;
-                cursor: pointer;
-                width: calc(50% - 20px);
+                max-width: 2000px;
                 @include flexbox();
                 @include justify-content(space-between);
-                @include align-items(center);
-                .product-faq-button-title {
-                    font-weight: 800;
-                    font-size: $product-faq-button-font-size;
-                    text-transform: uppercase;
-                }
-                .product-faq-button-icon {
-                }
-            }
-        }
-    }
-    #experience {
-        height: fit-content;
-        box-sizing: border-box;
-        width: 100%;
-        .experience-title {
-            margin: 100px auto;
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 800;
-            line-height: $experience-title-font-size;
-            font-size: $experience-title-font-size;
-        }
-        .experience-content {
-            text-align: center;
-            margin: 100px auto;
-            font-weight: 300;
-            width: 100%;
-            max-width: 1000px;
-            font-size: $experience-content-font-size;
-        }
-        .contact-me {
-            display: block;
-            margin: 0 auto;
-        }
-        .experience-brands {
-            margin: 100px auto;
-            box-sizing: border-box;
-            @include flexbox();
-            @include justify-content(space-between);
-            @include flex-wrap(wrap);
-            width: 100%;
-            max-width: 1000px;
-        }
-        .experience-slider {
-            margin: 200px 0;
-            .slider-box {
-                width: 100%;
-                .slider-box-content {
-                    margin: 50px auto;
-                    width: 100%;
-                    max-width: 1000px;
-                    .slider-description p{
-                        font-size: $experience-slide-description-font-size;
-                        line-height: 40px;
-                        font-weight: 300;
-                    }
-                    .slider-author {
-                        font-size: $experience-slide-author-font-size;
-                        text-transform: uppercase;
+                @include flex-wrap(wrap);
+                .product-faq-button {
+                    border: 1px solid $color-white;
+                    padding: 20px;
+                    box-sizing: border-box;
+                    margin: 10px;
+                    cursor: pointer;
+                    width: calc(50% - 20px);
+                    @include flexbox();
+                    @include justify-content(space-between);
+                    @include align-items(center);
+                    .product-faq-button-title {
                         font-weight: 800;
-                        width: fit-content;
-                        margin: 0 auto;
-                        text-align: center;
-                        padding-bottom: 0px;
-                        border-width: 0 0 3px;
-                        border-color: $color-black;
-                        border-style: solid;
+                        font-size: $product-faq-button-font-size;
+                        text-transform: uppercase;
+                    }
+                    .product-faq-button-icon {
                     }
                 }
             }
         }
-    }
-    #contact {
-        background-color: $color-black;
-        width: 100%;
-        color: $color-white;
-        margin: -10px 0 0;
-        box-sizing: border-box;
-        padding: 50px 0 200px;
-        .contact-title {
-            text-transform: uppercase;
-            text-align: center;
-            font-weight: 800;
-            &.contact-title-1 {
-                line-height: $contact-title-1-font-size;
-                font-size: $contact-title-1-font-size;
-            }
-            &.contact-title-2 {
-                line-height: $contact-title-2-font-size;
-                font-size: $contact-title-2-font-size;
-            }
-            &.contact-title-3 {
-                line-height: $contact-title-3-font-size;
-                font-size: $contact-title-3-font-size;
-            }
-        }
-        .contact-or {
-            text-transform: uppercase;
-            margin: 80px auto;
-            text-align: center;
-            font-weight: 300;
-            line-height: $contact-or-font-size;
-            font-size: $contact-or-font-size;
-        }
-        .contact-linkedin {
-            width: fit-content;
+        #experience {
             height: fit-content;
             box-sizing: border-box;
-            padding: 20px;
-            margin: 0 auto;
-            cursor: pointer;
-            position: relative;
-        }
-        .contact-arrow {
-            background-image: url("../../assets/arrow-icon.svg");
-            background-repeat: no-repeat;
-            background-size: cover;
-            width: 170px;
-            height: 170px;
-            position: absolute;
-            &.contact-arrow-left {
-                left: -200px;
-                top: -100px;
-                transform: rotate(-112deg);
-            }
-            &.contact-arrow-right {
-                right: -200px;
-                top: -100px;
-                transform: rotate(-68deg) scaleY(-1);
-            }
-        }
-        .contact-mail {
-            text-align: center;
-            font-weight: 800;
-            line-height: $contact-mail-font-size;
-            font-size: $contact-mail-font-size;
-            cursor: pointer;
-            text-decoration: underline;
-        }
-    }
-    footer {
-        width: 100%;
-        padding: 20px;
-        box-sizing: border-box;
-        .footer-author {
             width: 100%;
-            text-transform: uppercase;
+            .experience-title {
+                padding: 0 50px;
+                box-sizing: border-box;
+                margin: 100px auto;
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 800;
+                line-height: $experience-title-font-size;
+                font-size: $experience-title-font-size;
+            }
+            .experience-content {
+                padding: 0 50px;
+                box-sizing: border-box;
+                text-align: center;
+                margin: 100px auto;
+                font-weight: 300;
+                width: 100%;
+                max-width: 1000px;
+                font-size: $experience-content-font-size;
+            }
+            .contact-me {
+                display: block;
+                margin: 0 auto;
+            }
+            .experience-brands {
+                padding: 0 50px;
+                box-sizing: border-box;
+                margin: 100px auto;
+                box-sizing: border-box;
+                @include flexbox();
+                @include justify-content(space-around);
+                @include flex-wrap(wrap);
+                width: 100%;
+                max-width: 1000px;
+                .experience-brand {
+                    margin: 10px;
+                }
+            }
+            .experience-slider {
+                margin: 100px 0 200px;
+                .slider-box {
+                    width: 100%;
+                    .slider-box-content {
+                        padding: 0 50px;
+                        box-sizing: border-box;
+                        margin: 50px auto;
+                        width: 100%;
+                        max-width: 1000px;
+                        .slider-description p {
+                            font-size: $experience-slide-description-font-size;
+                            line-height: 40px;
+                            font-weight: 300;
+                        }
+                        .slider-author {
+                            font-size: $experience-slide-author-font-size;
+                            text-transform: uppercase;
+                            font-weight: 800;
+                            width: fit-content;
+                            margin: 0 auto;
+                            text-align: center;
+                            padding-bottom: 0px;
+                            border-width: 0 0 3px;
+                            border-color: $color-black;
+                            border-style: solid;
+                        }
+                    }
+                }
+            }
+        }
+        #contact {
+            background-color: $color-black;
+            width: 100%;
+            color: $color-white;
+            margin: -10px 0 0;
             box-sizing: border-box;
-            text-align: right;
-            font-weight: 800;
-            line-height: 20px;
-            font-size: $footer-author-font-size;
+            padding: 50px 0 200px;
+            .contact-title {
+                text-transform: uppercase;
+                text-align: center;
+                font-weight: 800;
+                &.contact-title-1 {
+                    line-height: $contact-title-1-font-size;
+                    font-size: $contact-title-1-font-size;
+                }
+                &.contact-title-2 {
+                    line-height: $contact-title-2-font-size;
+                    font-size: $contact-title-2-font-size;
+                }
+                &.contact-title-3 {
+                    line-height: $contact-title-3-font-size;
+                    font-size: $contact-title-3-font-size;
+                }
+            }
+            .contact-or {
+                text-transform: uppercase;
+                margin: 80px auto;
+                text-align: center;
+                font-weight: 300;
+                line-height: $contact-or-font-size;
+                font-size: $contact-or-font-size;
+            }
+            .contact-linkedin {
+                width: fit-content;
+                height: fit-content;
+                box-sizing: border-box;
+                padding: 20px;
+                margin: 0 auto;
+                cursor: pointer;
+                position: relative;
+            }
+            .contact-arrow {
+                background-image: url("../../assets/arrow-icon.svg");
+                background-repeat: no-repeat;
+                background-size: cover;
+                width: 170px;
+                height: 170px;
+                position: absolute;
+                &.contact-arrow-left {
+                    left: -200px;
+                    top: -100px;
+                    transform: rotate(-112deg);
+                }
+                &.contact-arrow-right {
+                    right: -200px;
+                    top: -100px;
+                    transform: rotate(-68deg) scaleY(-1);
+                }
+            }
+            .contact-mail {
+                text-align: center;
+                font-weight: 800;
+                line-height: $contact-mail-font-size;
+                font-size: $contact-mail-font-size;
+                cursor: pointer;
+                text-decoration: underline;
+            }
+        }
+        footer {
+            width: 100%;
+            padding: 20px;
+            box-sizing: border-box;
+            .footer-author {
+                width: 100%;
+                text-transform: uppercase;
+                box-sizing: border-box;
+                text-align: right;
+                font-weight: 800;
+                line-height: 20px;
+                font-size: $footer-author-font-size;
+            }
         }
     }
 }
