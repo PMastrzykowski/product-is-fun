@@ -15,7 +15,7 @@ button {
     font-family: $font-1;
     text-transform: uppercase;
     font-weight: 800;
-    &.contact-me{
+    &.contact-me {
         background-color: $color-black;
         color: $color-white;
         font-size: $contact-me-button-font-size;
@@ -23,6 +23,10 @@ button {
         box-sizing: border-box;
     }
 }
-p{
+p {
     line-height: 25px;
+}
+a {
+    color: inherit; /* blue colors for links too */
+    text-decoration: inherit; /* no underline */
 }

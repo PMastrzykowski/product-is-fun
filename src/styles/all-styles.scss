@@ -2,5 +2,9 @@
 @import "./mixins.scss";
 @import "./app.scss";
 
+//Slick
+@import "~slick-carousel/slick/slick.css"; 
+@import "~slick-carousel/slick/slick-theme.css";
+
 //Landing
 @import "./components/landing.scss";
