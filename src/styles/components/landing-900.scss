@@ -62,5 +62,29 @@
                 }
             }
         }
+        &.menu-open {
+            #mobile-menu-list{
+                opacity: 1;
+            }
+            #mobile-linkedin {
+                opacity: 0;
+                transform: translateY(100px);
+            }
+            #mobile-menu{
+                .mobile-menu-bar-1{
+                    opacity: 0;
+                    transform: rotate(-45deg) translate(-9px, 16px);
+                }
+                .mobile-menu-bar-2{
+                    transform: rotate(-45deg) translateY(10px);
+                }
+                .mobile-menu-bar-3{
+                    transform: rotate(45deg) translateY(-10px);
+                }
+            }
+            #landing-content {
+                transform: translateX(100vw);
+            }
+        }
     }
 }
