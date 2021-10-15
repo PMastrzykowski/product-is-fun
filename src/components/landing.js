@@ -13,6 +13,7 @@ import LogoProto from "../assets/logo-proto.svg";
 import LogoHSBC from "../assets/logo-hsbc.svg";
 import ContactRibbon from "../assets/contact-ribbon.svg";
 import LogoLinkedin from "../assets/logo-linkedin.svg";
+import LogoLinkedinTransparent from "../assets/logo-linkedin-transparent.svg";
 
 class Landing extends React.Component {
     constructor(props) {
@@ -195,7 +196,10 @@ class Landing extends React.Component {
             },
         ];
         return (
-            <div id="landing">
+            <div
+                id="landing"
+                className={this.state.isMenuOpen ? "menu-open" : ""}
+            >
                 <div id={`loader`} ref={(e) => (this.loader = e)}>
                     <img src={HeaderLogo} alt={`Logo`} />
                 </div>
@@ -248,7 +252,41 @@ class Landing extends React.Component {
                         </div>
                     </div>
                 </header>
-                <div id="mobile-menu"></div>
+                <div id="mobile-logo" />
+                <div id="mobile-menu" onClick={this.toggleMenu}>
+                    <div className="mobile-menu-bar mobile-menu-bar-1" />
+                    <div className="mobile-menu-bar mobile-menu-bar-2" />
+                    <div className="mobile-menu-bar mobile-menu-bar-3" />
+                </div>
+                <div id="mobile-menu-list">
+                    <div
+                        className={`mobile-menu-list-button`}
+                        onClick={() => this.handleMenuClick(this.about)}
+                    >
+                        About me
+                    </div>
+                    <div
+                        className={`mobile-menu-list-button`}
+                        onClick={() => this.handleMenuClick(this.howIWork)}
+                    >
+                        How I work
+                    </div>
+                    <div
+                        className={`mobile-menu-list-button`}
+                        onClick={() => this.handleMenuClick(this.productFAQ)}
+                    >
+                        Product FAQ
+                    </div>
+                    <div
+                        className={`mobile-menu-list-button`}
+                        onClick={() => this.handleMenuClick(this.contact)}
+                    >
+                        Get in touch
+                    </div>
+                </div>
+                <div id="mobile-linkedin">
+                    <img src={LogoLinkedinTransparent} alt={`Linkedin`} />
+                </div>
                 <div id="landing-content">
                     <section id="main">
                         <div className="main-left"></div>
@@ -472,13 +510,26 @@ class Landing extends React.Component {
                         </div>
                         <button className={`contact-me`}>Contact me</button>
                         <div className="experience-brands">
-                            <img src={LogoBNY} alt={`BNY Mellon`} className="experience-brand"/>
+                            <img
+                                src={LogoBNY}
+                                alt={`BNY Mellon`}
+                                className="experience-brand"
+                            />
                             <img
                                 src={LogoEagle}
-                                alt={`Eagle Investment Systems`} className="experience-brand"
+                                alt={`Eagle Investment Systems`}
+                                className="experience-brand"
                             />
-                            <img src={LogoProto} alt={`Proto.io`} className="experience-brand" />
-                            <img src={LogoHSBC} alt={`HSBC`} className="experience-brand" />
+                            <img
+                                src={LogoProto}
+                                alt={`Proto.io`}
+                                className="experience-brand"
+                            />
+                            <img
+                                src={LogoHSBC}
+                                alt={`HSBC`}
+                                className="experience-brand"
+                            />
                         </div>
                         <Slider
                             {...sliderSettings}

@@ -3,6 +3,18 @@
         #header {
             display: none;
         }
+        #mobile-logo {
+            display: block;
+        }
+        #mobile-menu {
+            @include flexbox();
+        }
+        #mobile-menu {
+            @include flexbox();
+        }
+        #mobile-linkedin {
+            @include flexbox();
+        }
         #landing-content {
             #main {
                 @include flex-direction(column);
