@@ -376,7 +376,8 @@
                 box-sizing: border-box;
                 margin: 100px auto;
                 box-sizing: border-box;
-                @include flexbox();
+                display: none;
+                // @include flexbox();
                 @include justify-content(space-around);
                 @include flex-wrap(wrap);
                 width: 100%;
