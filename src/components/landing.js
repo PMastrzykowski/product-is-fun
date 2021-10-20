@@ -72,7 +72,6 @@ class Landing extends React.Component {
         });
     };
     onEnter = () => {
-        document.body.style.overflow = "hidden";
         this.state.URLs.forEach(async (url, i) => {
             await this.loadImage(url);
             if (i === this.state.URLs.length - 1) {
@@ -244,7 +243,7 @@ class Landing extends React.Component {
                 <header id={`header`} ref={(e) => (this.header = e)}>
                     <div className={`header-inner`}>
                         <div className={`header-inner-left`}>
-                            <img src={HeaderLogo} alt={`Logo`} />
+                            <img src={HeaderLogo} alt={`Logo`} onClick={() => this.handleMenuClick(this.main)}/>
                         </div>
                         {/* <div className={`header-inner-right mobile`}>
                             <button
@@ -290,7 +289,11 @@ class Landing extends React.Component {
                         </div>
                     </div>
                 </header>
-                <div id="mobile-logo" ref={(e) => (this.mobileLogo = e)} />
+                <div
+                    id="mobile-logo"
+                    ref={(e) => (this.mobileLogo = e)}
+                    onClick={() => this.handleMenuClick(this.main)}
+                />
                 <div
                     id="mobile-menu"
                     onClick={this.toggleMenu}
@@ -329,14 +332,22 @@ class Landing extends React.Component {
                         Get in touch
                     </div>
                 </div>
-                <div
-                    id="mobile-linkedin"
-                    ref={(e) => (this.mobileLinkedin = e)}
+                <a
+                    href={"https://www.linkedin.com/in/pmastrzykowski/"}
+                    target="_blank"
                 >
-                    <img src={LogoLinkedinTransparent} alt={`Linkedin`} />
-                </div>
-                <div id="landing-content">
-                    <section id="main">
+                    <div
+                        id="mobile-linkedin"
+                        ref={(e) => (this.mobileLinkedin = e)}
+                    >
+                        <img src={LogoLinkedinTransparent} alt={`Linkedin`} />
+                    </div>
+                </a>
+                <div
+                    id="landing-content"
+                    ref={(e) => (this.landingContent = e)}
+                >
+                    <section id="main" ref={(e) => (this.main = e)}>
                         <div className="main-left"></div>
                         <div className="main-right">
                             <div
@@ -356,12 +367,15 @@ class Landing extends React.Component {
                             <button
                                 className={`contact-me`}
                                 ref={(e) => (this.mainContactMe = e)}
+                                onClick={() =>
+                                    this.handleMenuClick(this.contact)
+                                }
                             >
                                 Contact me
                             </button>
                         </div>
                     </section>
-                    <section id="about">
+                    <section id="about" ref={(e) => (this.about = e)}>
                         <div className="about-left">
                             <div className="about-title">
                                 <h1>About me</h1>
@@ -418,13 +432,20 @@ class Landing extends React.Component {
                         </div>
                         <div className="about-right"></div>
                     </section>
-                    <section id="how-i-work">
+                    <section id="how-i-work" ref={(e) => (this.howIWork = e)}>
                         <div className="how-i-work-left">
                             <div className="how-i-work-title">How</div>
                             <div className="how-i-work-title">I work</div>
 
                             <div className="how-i-work-or">Fair enough?</div>
-                            <button className={`contact-me`}>Contact me</button>
+                            <button
+                                className={`contact-me`}
+                                onClick={() =>
+                                    this.handleMenuClick(this.contact)
+                                }
+                            >
+                                Contact me
+                            </button>
                         </div>
                         <div className="how-i-work-right">
                             <div className="how-i-work-content-title">
@@ -479,7 +500,10 @@ class Landing extends React.Component {
                             </div>
                         </div>
                     </section>
-                    <section id="product-faq">
+                    <section
+                        id="product-faq"
+                        ref={(e) => (this.productFAQ = e)}
+                    >
                         <div className="product-faq-title product-faq-title-1">
                             Product
                         </div>
@@ -562,14 +586,19 @@ class Landing extends React.Component {
                             </div>
                         </div>
                     </section>
-                    <section id="experience">
+                    <section id="experience" ref={(e) => (this.experience = e)}>
                         <div className="experience-title">No miracles.</div>
                         <div className="experience-content">
                             I worked with companies of all sizes. I will handle
                             all sort of problems you have. There are no
                             miracles. All the rest can be addressed.
                         </div>
-                        <button className={`contact-me`}>Contact me</button>
+                        <button
+                            className={`contact-me`}
+                            onClick={() => this.handleMenuClick(this.contact)}
+                        >
+                            Contact me
+                        </button>
                         <div className="experience-brands">
                             <img
                                 src={LogoBNY}
@@ -606,7 +635,9 @@ class Landing extends React.Component {
                                             <p>{box.content}</p>
                                         </div>
                                         <div className={`slider-author`}>
-                                            <a href={box.link}>@{box.author}</a>
+                                            <a href={box.link} target="_blank">
+                                                @{box.author}
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
@@ -614,7 +645,7 @@ class Landing extends React.Component {
                         </Slider>
                     </section>
                     <img src={ContactRibbon} alt={`Contact`} />
-                    <section id="contact">
+                    <section id="contact" ref={(e) => (this.contact = e)}>
                         <div className="contact-title contact-title-1">
                             Don
                             <span>&#39;</span>t
@@ -627,13 +658,22 @@ class Landing extends React.Component {
                         </div>
                         <div className="contact-or">Message me on</div>
                         <div className="contact-linkedin">
-                            <img src={LogoLinkedin} alt={`Linkedin`} />
+                            <a
+                                href={
+                                    "https://www.linkedin.com/in/pmastrzykowski/"
+                                }
+                                target="_blank"
+                            >
+                                <img src={LogoLinkedin} alt={`Linkedin`} />
+                            </a>
                             <div className="contact-arrow contact-arrow-left" />
                             <div className="contact-arrow contact-arrow-right" />
                         </div>
                         <div className="contact-or">Or</div>
                         <div className="contact-mail">
-                            patryk@productisfun.com
+                            <a href="mailto:patryk@productisfun.com">
+                                patryk@productisfun.com
+                            </a>
                         </div>
                     </section>
                     <footer>
@@ -641,7 +681,13 @@ class Landing extends React.Component {
                             Made with ❤️ by Patryk Mastrzykowski
                         </div>
                         <div className="footer-author">
-                            Photos by Mariusz Spłuszka
+                            Photos by{" "}
+                            <a
+                                href={"http://www.mariuszspluszka.com/"}
+                                target="_blank"
+                            >
+                                Mariusz Spłuszka
+                            </a>
                         </div>
                     </footer>
                 </div>

@@ -7,10 +7,7 @@
             display: block;
         }
         #mobile-menu {
-            @include flexbox();
-        }
-        #mobile-menu {
-            @include flexbox();
+            // @include flexbox();
         }
         #mobile-linkedin {
             @include flexbox();
@@ -68,7 +65,7 @@
             }
             #mobile-linkedin {
                 opacity: 0;
-                transform: translateY(100px);
+                bottom: -100px;
             }
             #mobile-menu{
                 .mobile-menu-bar-1{
