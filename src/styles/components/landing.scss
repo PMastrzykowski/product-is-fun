@@ -16,7 +16,7 @@
         z-index: 400;
         #Trazado_122 {
             path {
-                @keyframes flash {
+                @include keyframe(flash) {
                     0% {
                         fill: $color-black;
                     }
@@ -197,70 +197,16 @@
                         border-radius: 20px;
                         height: 60px;
                         width: 30px;
-                        @-webkit-keyframes SCROLL-DOTT {
+                        @include keyframe(SCROLL-DOTT) {
                             0% {
                                 top: 7px;
                                 opacity: 0;
                             }
-                            10%{
+                            10% {
                                 top: 7px;
                                 opacity: 1;
                             }
-                            90%{
-                                top: 38px;
-                                opacity: 1;
-                            }
-                            100% {
-                                top: 38px;
-                                opacity: 0;
-                            }
-                        }
-                        @-moz-keyframes SCROLL-DOTT {
-                            0% {
-                                top: 7px;
-                                opacity: 0;
-                            }
-                            10%{
-                                top: 7px;
-                                opacity: 1;
-                            }
-                            90%{
-                                top: 38px;
-                                opacity: 1;
-                            }
-                            100% {
-                                top: 38px;
-                                opacity: 0;
-                            }
-                        }
-                        @-o-keyframes SCROLL-DOTT {
-                            0% {
-                                top: 7px;
-                                opacity: 0;
-                            }
-                            10%{
-                                top: 7px;
-                                opacity: 1;
-                            }
-                            90%{
-                                top: 38px;
-                                opacity: 1;
-                            }
-                            100% {
-                                top: 38px;
-                                opacity: 0;
-                            }
-                        }
-                        @keyframes SCROLL-DOTT {
-                            0% {
-                                top: 7px;
-                                opacity: 0;
-                            }
-                            10%{
-                                top: 7px;
-                                opacity: 1;
-                            }
-                            90%{
+                            90% {
                                 top: 38px;
                                 opacity: 1;
                             }
@@ -539,6 +485,68 @@
                 }
             }
         }
+        #contact-ribbon {
+            @include keyframe(move-circle-1) {
+                0% {
+                    transform: translate(1085.523px, 6240.579px) scale(1);
+                }
+                20% {
+                    transform: translate(1065.523px, 6230.579px) scale(1.05);
+                }
+                40% {
+                    transform: translate(1045.523px, 6250.579px) scale(0.9);
+                }
+                60% {
+                    transform: translate(1035.523px, 6260.579px) scale(1.1);
+                }
+                100% {
+                    transform: translate(1085.523px, 6240.579px) scale(1);
+                }
+            }
+            @include keyframe(move-circle-2) {
+                0% {
+                    transform: translate(1346.611px, 6194.25px) scale(1);
+                }
+                20% {
+                    transform: translate(1356.611px, 6204.25px) scale(1.05);
+                }
+                40% {
+                    transform: translate(1336.611px, 6174.25px) scale(0.9);
+                }
+                60% {
+                    transform: translate(1366.611px, 6214.25px) scale(1.1);
+                }
+                100% {
+                    transform: translate(1346.611px, 6194.25px) scale(1);
+                }
+            }
+            @include keyframe(move-circle-3) {
+                0% {
+                    transform: translate(132.552px, 6235.543px) scale(1);
+                }
+                20% {
+                    transform: translate(112.552px, 6215.543px) scale(1.05);
+                }
+                40% {
+                    transform: translate(152.552px, 6205.543px) scale(0.9);
+                }
+                60% {
+                    transform: translate(142.552px, 6255.543px) scale(1.1);
+                }
+                100% {
+                    transform: translate(132.552px, 6235.543px) scale(1);
+                }
+            }
+            #contact-ribbon-circle-1 {
+                @include animation(move-circle-1 15s ease infinite);
+            }
+            #contact-ribbon-circle-2 {
+                @include animation(move-circle-2 20s ease infinite);
+            }
+            #contact-ribbon-circle-3 {
+                @include animation(move-circle-3 12s ease infinite);
+            }
+        }
         #contact {
             background-color: $color-black;
             width: 100%;
@@ -587,15 +595,37 @@
                 width: 170px;
                 height: 170px;
                 position: absolute;
+                @include keyframe(contact-arrow-left) {
+                    0% {
+                        transform: rotate(-112deg) translate(0, 0);
+                    }
+                    50% {
+                        transform: rotate(-122deg) translate(-15px, 10px);
+                    }
+                    100% {
+                        transform: rotate(-112deg) translate(0, 0);
+                    }
+                }
+                @include keyframe(contact-arrow-right) {
+                    0% {
+                        transform: rotate(-78deg) scaleY(-1) translate(15px, -10px);
+                    }
+                    50% {
+                        transform: rotate(-68deg) scaleY(-1) translate(0, 0);
+                    }
+                    100% {
+                        transform: rotate(-78deg) scaleY(-1) translate(15px, -10px);
+                    }
+                }
                 &.contact-arrow-left {
+                    @include animation(contact-arrow-left 4s ease infinite);
                     left: -200px;
                     top: -100px;
-                    transform: rotate(-112deg);
                 }
                 &.contact-arrow-right {
                     right: -200px;
                     top: -100px;
-                    transform: rotate(-68deg) scaleY(-1);
+                    @include animation(contact-arrow-right 4s ease infinite);
                 }
             }
             .contact-mail {

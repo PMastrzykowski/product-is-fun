@@ -11,9 +11,10 @@ import LogoBNY from "../assets/logo-bny.svg";
 import LogoEagle from "../assets/logo-eagle.svg";
 import LogoProto from "../assets/logo-proto.svg";
 import LogoHSBC from "../assets/logo-hsbc.svg";
-import ContactRibbon from "../assets/contact-ribbon.svg";
+import { ReactComponent as ContactRibbon } from "../assets/contact-ribbon.svg";
 import LogoLinkedin from "../assets/logo-linkedin.svg";
 import LogoLinkedinTransparent from "../assets/logo-linkedin-transparent.svg";
+import Signature from "../assets/signature.svg";
 //Book covers
 import BlueOceanCover from "../assets/book_covers/blue-ocean.jpg";
 import DesignThinkingCover from "../assets/book_covers/design-thinking.jpg";
@@ -22,6 +23,7 @@ import LeanStartupCover from "../assets/book_covers/lean-startup.jpg";
 import ProductLeadershipCover from "../assets/book_covers/product-leadership.webp";
 import ProductManagementEssentialsCover from "../assets/book_covers/product-management-essentials.webp";
 import StartupManualCover from "../assets/book_covers/startup-manual.jpg";
+
 class Landing extends React.Component {
     constructor(props) {
         super(props);
@@ -525,7 +527,10 @@ class Landing extends React.Component {
                                     questions!
                                 </p>
                                 <p>It will be great hearing from you,</p>
-                                <p>Patryk</p>
+                                <img
+                                src={Signature}
+                                alt={`Patryk`}
+                            />
                             </div>
                         </div>
                         <div className="about-right"></div>
@@ -705,7 +710,7 @@ class Landing extends React.Component {
                             ))}
                         </Slider>
                     </section>
-                    <img src={ContactRibbon} alt={`Contact`} />
+                    <ContactRibbon />
                     <section id="contact" ref={(e) => (this.contact = e)}>
                         <div className="contact-title contact-title-1">
                             Don
