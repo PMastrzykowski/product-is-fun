@@ -2,7 +2,7 @@
     #landing {
         #landing-content {
             #main {
-                height: fit-content;
+                // height: fit-content;
                 .main-right {
                     padding: 50px 50px 150px;
                 }
@@ -27,6 +27,20 @@
             }
             #product-faq {
                 padding: 150px 50px;
+            }
+        }
+    }
+}
+
+@media only screen and (max-height: 800px) {
+    #landing {
+        #landing-content {
+            #main {
+                .main-right {
+                    .main-scroll {
+                        display: none;
+                    }
+                }
             }
         }
     }

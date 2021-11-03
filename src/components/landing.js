@@ -1,6 +1,6 @@
 import React from "react";
 import { TimelineLite } from "greensock";
-import { Waypoint } from "react-waypoint";
+// import { Waypoint } from "react-waypoint";
 import animateScrollTo from "animated-scroll-to";
 import Slider from "react-slick";
 
@@ -14,7 +14,14 @@ import LogoHSBC from "../assets/logo-hsbc.svg";
 import ContactRibbon from "../assets/contact-ribbon.svg";
 import LogoLinkedin from "../assets/logo-linkedin.svg";
 import LogoLinkedinTransparent from "../assets/logo-linkedin-transparent.svg";
-
+//Book covers
+import BlueOceanCover from "../assets/book_covers/blue-ocean.jpg";
+import DesignThinkingCover from "../assets/book_covers/design-thinking.jpg";
+import InspiredCover from "../assets/book_covers/inspired.jpg";
+import LeanStartupCover from "../assets/book_covers/lean-startup.jpg";
+import ProductLeadershipCover from "../assets/book_covers/product-leadership.webp";
+import ProductManagementEssentialsCover from "../assets/book_covers/product-management-essentials.webp";
+import StartupManualCover from "../assets/book_covers/startup-manual.jpg";
 class Landing extends React.Component {
     constructor(props) {
         super(props);
@@ -102,6 +109,11 @@ class Landing extends React.Component {
                         0.3,
                         { y: "20px", opacity: "0" },
                         "=-0.1"
+                    )
+                    .from(
+                        this.mainScroll,
+                        2,
+                        {opacity: "0" }
                     );
                 // .fromTo(
                 //     this.header,
@@ -136,40 +148,112 @@ class Landing extends React.Component {
             isMenuOpen: false,
         });
         animateScrollTo(to, {
-            speed: 300,
+            speed: 500,
             maxDuration: 500,
-            easing: (t) => {
-                return t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t;
-            },
+            easing: t => t < 0.5 ? 2 * t * t : -1 + (4 - 2 * t) * t
         });
     };
     render = () => {
         const sliderSettings = {
-            dots: true,
-            infinite: true,
-            speed: 500,
-            slidesToShow: 1,
-            slidesToScroll: 1,
-            autoplay: true,
-            arrows: false,
+            experience: {
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                arrows: false,
+            },
+            books: {
+                slidesToShow: 4,
+                arrows: false,
+                draggable: true,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 0,
+                speed: 4000,
+                pauseOnHover: false,
+                cssEase: "linear",responsive: [
+                    {
+                      breakpoint: 1100,
+                      settings: {
+                        slidesToShow: 3,
+                      }
+                    },
+                    {
+                      breakpoint: 800,
+                      settings: {
+                        slidesToShow: 2,
+                      }
+                    },
+                    {
+                      breakpoint: 600,
+                      settings: {
+                        slidesToShow: 1,
+                        autoplaySpeed: 2000,
+                        speed: 1000,
+                        pauseOnHover: true
+                      }
+                    },
+                ]
+            },
         };
-        const recommendations = [
-            {
-                content: `Patryk is great product manager with life-saving technical background. He has excellent ideas, great communication and heart-warming 'can do' attitude. He's a coworker each team should have.`,
-                author: "Jacek",
-                link: "https://www.linkedin.com/in/jacekfilo/",
-            },
-            {
-                content: `Cooperation with Patryk is an amazing experience. You can always count on a multitude of his creative ideas as well as his helping hand. Applying teaching skill (and patience) he explains all the nuances of potential solutions. Patryk's workshop is characterized by punctuality, diligence, quick implementation of changes, openness to customer's suggestions, creativity and accessibility. His analytical mind combined with the artistic sense, highly developed emotional intelligence and a sense of humor make work not only successful, but also pleasant!`,
-                author: "Karol",
-                link: "https://www.linkedin.com/in/karol-mierzwa-519505150/",
-            },
-            {
-                content: `I was working with Patryk for 1,5 year. It was a great pleasure to cooperate with him. During that time he was considered as the most innovative person in our team. Patryk's input allowed to speed up our daily work due to automatization of the process and reducing manual job. Patryk combined great financial knowledge with strong sense of technical issues. He was also known as a good team player being ready to provide others with advices and adding positive atmosphere in the group. I can fully recommend working with Patryk!`,
-                author: "Bartłomiej",
-                link: "https://www.linkedin.com/in/bart%C5%82omiej-o%C5%BCga-600674154/",
-            },
-        ];
+        const sliderContent = {
+            recommendations: [
+                {
+                    content: `Patryk is great product manager with life-saving technical background. He has excellent ideas, great communication and heart-warming 'can do' attitude. He's a coworker each team should have.`,
+                    author: "Jacek",
+                    link: "https://www.linkedin.com/in/jacekfilo/",
+                },
+                {
+                    content: `Cooperation with Patryk is an amazing experience. You can always count on a multitude of his creative ideas as well as his helping hand. Applying teaching skill (and patience) he explains all the nuances of potential solutions. Patryk's workshop is characterized by punctuality, diligence, quick implementation of changes, openness to customer's suggestions, creativity and accessibility. His analytical mind combined with the artistic sense, highly developed emotional intelligence and a sense of humor make work not only successful, but also pleasant!`,
+                    author: "Karol",
+                    link: "https://www.linkedin.com/in/karol-mierzwa-519505150/",
+                },
+                {
+                    content: `I was working with Patryk for 1,5 year. It was a great pleasure to cooperate with him. During that time he was considered as the most innovative person in our team. Patryk's input allowed to speed up our daily work due to automatization of the process and reducing manual job. Patryk combined great financial knowledge with strong sense of technical issues. He was also known as a good team player being ready to provide others with advices and adding positive atmosphere in the group. I can fully recommend working with Patryk!`,
+                    author: "Bartłomiej",
+                    link: "https://www.linkedin.com/in/bart%C5%82omiej-o%C5%BCga-600674154/",
+                },
+            ],
+            books: [
+                {
+                    image: BlueOceanCover,
+                    alt: "Blue Ocean Strategy",
+                    link: "https://www.google.com/search?q=Blue+Ocean+Strategy",
+                },
+                {
+                    image: DesignThinkingCover,
+                    alt: "Design Thinking - Innovación en Negocios",
+                    link: "https://www.google.com/search?q=Design+Thinking+-+Innovaci%C3%B3n+en+Negocios",
+                },
+                {
+                    image: InspiredCover,
+                    alt: "INSPIRED: How to Create Tech Products Customers Love",
+                    link: "https://www.google.com/search?q=INSPIRED%3A+How+to+Create+Tech+Products+Customers+Love",
+                },
+                {
+                    image: LeanStartupCover,
+                    alt: "The Lean Startup",
+                    link: "https://www.google.com/search?q=The+Lean+Startup",
+                },
+                {
+                    image: ProductLeadershipCover,
+                    alt: "Product Leadership: How Top Product Managers Launch Awesome Products and Build Successful Teams",
+                    link: "https://www.google.com/search?q=Product+Leadership%3A+How+Top+Product+Managers+Launch+Awesome+Products+and+Build+Successful+Teams",
+                },
+                {
+                    image: ProductManagementEssentialsCover,
+                    alt: "Product Management Essentials: Tools and Techniques for Becoming an Effective Technical Product Manager",
+                    link: "https://www.google.com/search?q=Product+Management+Essentials%3A+Tools+and+Techniques+for+Becoming+an+Effective+Technical+Product+Manager",
+                },
+                {
+                    image: StartupManualCover,
+                    alt: "The Startup Owner's Manual",
+                    link: "https://www.google.com/search?q=The+Startup+Owner%27s+Manual",
+                },
+            ],
+        };
         return (
             <div
                 id="landing"
@@ -243,7 +327,11 @@ class Landing extends React.Component {
                 <header id={`header`} ref={(e) => (this.header = e)}>
                     <div className={`header-inner`}>
                         <div className={`header-inner-left`}>
-                            <img src={HeaderLogo} alt={`Logo`} onClick={() => this.handleMenuClick(this.main)}/>
+                            <img
+                                src={HeaderLogo}
+                                alt={`Logo`}
+                                onClick={() => this.handleMenuClick(this.main)}
+                            />
                         </div>
                         {/* <div className={`header-inner-right mobile`}>
                             <button
@@ -335,6 +423,7 @@ class Landing extends React.Component {
                 <a
                     href={"https://www.linkedin.com/in/pmastrzykowski/"}
                     target="_blank"
+                    rel="noopener noreferrer"
                 >
                     <div
                         id="mobile-linkedin"
@@ -373,6 +462,15 @@ class Landing extends React.Component {
                             >
                                 Contact me
                             </button>
+                            <div
+                                className="main-scroll"
+                                ref={(e) => (this.mainScroll = e)}
+                                onClick={() => this.handleMenuClick(this.about)}
+                            >
+                                <div className="main-scroll-icon">
+                                    <div className="main-scroll-icon-dott" />
+                                </div>
+                            </div>
                         </div>
                     </section>
                     <section id="about" ref={(e) => (this.about = e)}>
@@ -511,68 +609,31 @@ class Landing extends React.Component {
                             FAQ
                         </div>
                         <div className="product-faq-content">
-                            Product is just a way to solve a problem and it has
-                            to follow company vision. Imagine how the world
-                            might look like in 5 or 10 years. I will help you
-                            make the best of your vision, adjust your products
-                            to market needs and earn more.
+                            Do you know how the world might look like in 5 or 10
+                            years? Make use of it. I linked for you some great
+                            books I went through. They all helped me in my
+                            product work. Contact me and let's connect my
+                            knowledge and experience with your vision.
                         </div>
+                        <button
+                            className={`contact-me`}
+                            onClick={() => this.handleMenuClick(this.contact)}
+                        >
+                            Contact me
+                        </button>
+                        <Slider
+                            {...sliderSettings.books}
+                            className="books-slider"
+                        >
+                            {sliderContent.books.map((box, i) => (
+                                <div key={`box-${i}`} className={`slider-box`}>
+                                    <a href={box.link} target={"_blank"} rel="noopener noreferrer">
+                                        <img src={box.image} alt={box.alt} />
+                                    </a>
+                                </div>
+                            ))}
+                        </Slider>
                         <div className="product-faq-buttons">
-                            <div className="product-faq-button">
-                                <div className="product-faq-button-title">
-                                    How to roadmap?
-                                </div>
-                                <div className="product-faq-button-icon">
-                                    <img
-                                        src={OpenBlank}
-                                        alt={`Open in a newą tab`}
-                                    />
-                                </div>
-                            </div>
-                            <div className="product-faq-button">
-                                <div className="product-faq-button-title">
-                                    How to roadmap?
-                                </div>
-                                <div className="product-faq-button-icon">
-                                    <img
-                                        src={OpenBlank}
-                                        alt={`Open in a newą tab`}
-                                    />
-                                </div>
-                            </div>
-                            <div className="product-faq-button">
-                                <div className="product-faq-button-title">
-                                    How to roadmap?
-                                </div>
-                                <div className="product-faq-button-icon">
-                                    <img
-                                        src={OpenBlank}
-                                        alt={`Open in a newą tab`}
-                                    />
-                                </div>
-                            </div>
-                            <div className="product-faq-button">
-                                <div className="product-faq-button-title">
-                                    How to roadmap?
-                                </div>
-                                <div className="product-faq-button-icon">
-                                    <img
-                                        src={OpenBlank}
-                                        alt={`Open in a newą tab`}
-                                    />
-                                </div>
-                            </div>
-                            <div className="product-faq-button">
-                                <div className="product-faq-button-title">
-                                    How to roadmap?
-                                </div>
-                                <div className="product-faq-button-icon">
-                                    <img
-                                        src={OpenBlank}
-                                        alt={`Open in a newą tab`}
-                                    />
-                                </div>
-                            </div>
                             <div className="product-faq-button">
                                 <div className="product-faq-button-title">
                                     How to roadmap?
@@ -622,10 +683,10 @@ class Landing extends React.Component {
                             />
                         </div>
                         <Slider
-                            {...sliderSettings}
+                            {...sliderSettings.experience}
                             className="experience-slider"
                         >
-                            {recommendations.map((box, i) => (
+                            {sliderContent.recommendations.map((box, i) => (
                                 <div key={`box-${i}`} className={`slider-box`}>
                                     <div
                                         key={`box-${i}`}
@@ -635,7 +696,7 @@ class Landing extends React.Component {
                                             <p>{box.content}</p>
                                         </div>
                                         <div className={`slider-author`}>
-                                            <a href={box.link} target="_blank">
+                                            <a href={box.link} target="_blank" rel="noopener noreferrer">
                                                 @{box.author}
                                             </a>
                                         </div>
@@ -663,6 +724,7 @@ class Landing extends React.Component {
                                     "https://www.linkedin.com/in/pmastrzykowski/"
                                 }
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 <img src={LogoLinkedin} alt={`Linkedin`} />
                             </a>
@@ -685,6 +747,7 @@ class Landing extends React.Component {
                             <a
                                 href={"http://www.mariuszspluszka.com/"}
                                 target="_blank"
+                                rel="noopener noreferrer"
                             >
                                 Mariusz Spłuszka
                             </a>

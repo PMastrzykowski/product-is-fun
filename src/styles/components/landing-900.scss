@@ -20,6 +20,11 @@
                     width: 100vw;
                     min-height: 50vh;
                 }
+                .main-right {
+                    .main-scroll{
+                        display: none;
+                    }
+                }
             }
             #about {
                 @include flex-direction(column);
